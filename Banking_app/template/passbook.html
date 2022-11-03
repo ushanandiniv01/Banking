@@ -1,0 +1,113 @@
+<html>
+    <head>
+        <title>passbook</title>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: white;
+            }
+            button{
+                background-color: #4CAF50;
+                width: 25%;
+                padding: 15px;
+                color: black;
+                border: none;
+                float: center;
+                font-size: 15px;
+            }
+	    h1{
+		background-color: purple;
+                width: 100%;
+                padding: 15px;
+                color: white;
+                border: none;
+                float: center;
+                font-size: 25px;
+		}
+            label{
+                font-size: 20px;
+            }
+            form{
+                border: 3px solid #f1f1f1;
+            }
+            input[type=number]{
+                width: 50%;
+                font-size: 15px;
+                margin: 8px 0px;
+                padding: 12px 20px;
+                display: inline-block;
+                border: 2px solid green;
+                box-sizing: border-box;
+            }
+            button:hover{
+                opacity:0.7;
+
+            }
+            .container{
+                padding: 50px;
+                background-color: white;
+            }
+            .imgcontainer {
+                text-align: center;
+                margin: 24px 0 12px 0;
+            }
+
+            img.avatar {
+                width: 20%;
+                border-radius: 50%;
+            }
+        </style>
+    </head>
+    <body>
+
+        <center><h1>Passbook</h1></center>
+        <form action="#" method="post">
+            {% csrf_token %}
+            <center><div class="container">
+
+                <label for ='history'  ><b>Transaction History  </b></label>
+
+
+
+            </div></center>
+	<div class="card ">
+
+	<table style="margin-left:auto;margin-right:auto;">
+	<center><div class="head" style="font-size: 25px; font-family: myfont2;"><u>Credit Transaction</u></div></center>
+
+           <tr height="50px" style="font-size:20px;">
+          <th width="100px">From</th>
+
+            <th width="200px">Credited Amount</th>
+            </tr>
+            {% for i in data %}
+            <tr class="credittbl">
+                  <td><b>{{i.0}}</b></td>
+                  <td style="text-align: center"><b>{{i.1}}</b></td>
+                </tr>
+            {% endfor %}
+
+          </table>
+	</div>
+	<br>
+	<br>
+
+	<center><div class="head" style="font-size: 25px; font-family: myfont2;"><u>Debit Transaction</u></div></center>
+          <table style="margin-left:auto;margin-right:auto;">
+            <tr height="50px" style="font-size:20px;">
+            <th width="100px">To</th>
+
+            <th width="200px">Debited Amount</th>
+            </tr>
+            {% for j in data2 %}
+            <tr class="debittbl">
+                  <td><b>{{j.0}}</b></td>
+                  <td style="text-align: center"><b>{{j.1}}</b></td>
+                </tr>
+            {% endfor %}
+
+          </table>
+
+        </form>
+    </body>
+</html>

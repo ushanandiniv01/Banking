@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+
+
+  h1{
+      background-color: purple;
+              width: 100%;
+              padding: 15px;
+              color: white;
+              border: none;
+              float: center;
+              font-size: 30px;
+      text-align:center;
+    }
+
+
+
+
+
+
+
+
+
+
+}
+</style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page</title>
+    <link rel="stylesheet" href="../src/styles.css" />
+  </head>
+  <body>
+    <center><h1>Bank of Clarivate</h1></center></br></br></br>
+    <nav>
+
+      <div class="logo">
+
+        {% load static %}
+      </div>
+      <div class="menuIcon">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+
+    </nav>
+	<br>
+	<a href="http://localhost:8000/passbook/"><img src="{% static 'mpassbook.jpg' %}" alt="passbook" width="376" height="333">
+<a href="http://localhost:8000/deposit/"><img src="{% static 'deposit.jpg' %}" alt="deposit money" width="376" height="333">
+<a href="http://localhost:8000/money/"><img src="{% static 'moneytransfer.jpg' %}" alt="Money transfer" width="376" height="333">
+<a href="http://localhost:8000/balinq/"><img src="{% static 'balance.jpg' %}" alt="Balance enquiry" width="376" height="333">
+
+<br>
+
+
+
+
+
+
+
+
+
+    <script src="src/index.js"></script>
+  </body>
+</html>

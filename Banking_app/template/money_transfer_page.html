@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Money transfer</title>
+    <style>
+        h1{
+            background-color: purple;
+                width: 100%;
+                padding: 15px;
+                color: white;
+                border: none;
+                float: center;
+                font-size: 30px;
+            text-align:center;
+      }
+      .heading{
+              font-size: 30px;
+              margin-left:40px;
+              font-weight: 600;
+              font-family: myfont;
+        }
+         .buttonclass{
+            margin-top: 20px;
+      }
+    .cont{
+          display: flex;
+        align-items: center;
+        }
+   </style>
+  </head>
+  <body>
+
+     <h1 >Transactions</h1>
+      <div class="heading mb-5" style="font-family: myfont2;">Transfer Money</div>
+
+      <div class="cont">
+      <div class="card ">
+         <table>
+            <form action="" method="POST">
+              {% csrf_token %}
+            <tr height="40px">
+                <th>Account No:</th>
+                <td><input type="number" id="form3Example3" name="acntno" /><button type="submit" id="sub" class="btn btn-primary bg-success btninner" name="first"
+                    style="width: 25%; height: 30px;background-color: purple;margin-left: 10px; font-size: 15px;align-items: center;color: white;justify-content: center;"><strong>Check</strong></button></th>
+            </tr>
+        </form>
+        <form action="" method="POST">
+          {% csrf_token %}
+            <tr height="40px">
+                <th>Amount to be transfered:</th>
+                <td><input type="number" id="form3Example3" name="transfer_amt"/></td>
+            </tr>
+
+            </table>
+           <center> <div class="buttonclass">
+                    <button type="submit" name="transfer" class="btn btn-primary btn-sm bg-dark btninner" style="width: 150px; background-color: purple;height:40px;color: white"><strong>Deposit</strong></button>
+                </div></center>
+
+      </div>
+   </body>
+</html>
